@@ -3,4 +3,4 @@ uvicorn
 python-multipart
 python-dotenv
 google-genai
-pypd
+pypdf==6.0.0
