@@ -47,7 +47,7 @@ function App() {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch("http://127.0.0.1:5000/api/extract-pdf", {
+    const response = await fetch("https://careerpilot-nc5e.onrender.com/api/extract-pdf", {
       method: "POST",
       body: formData,
     });
@@ -85,7 +85,7 @@ function App() {
     formData.append("file", file);
 
     const response = await fetch(
-      "http://127.0.0.1:5000/api/extract-pdf",
+      "https://careerpilot-nc5e.onrender.com/api/extract-pdf",
       {
         method: "POST",
         body: formData,
@@ -125,7 +125,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/api/analyze-resume",
+        "https://careerpilot-nc5e.onrender.com/api/analyze-resume",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -162,7 +162,7 @@ function App() {
   setIsAnalyzing(true);
 
   try {
-    const response = await fetch("http://127.0.0.1:5000/api/job-match", {
+    const response = await fetch("https://careerpilot-nc5e.onrender.com/api/job-match", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -200,7 +200,7 @@ function App() {
   setIsPreparingInterview(true);
 
   try {
-    const response = await fetch("http://127.0.0.1:5000/api/interview-prep", {
+    const response = await fetch("https://careerpilot-nc5e.onrender.com/api/interview-prep", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -445,7 +445,7 @@ const startMockInterview = async () => {
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:5000/api/mock-interview",
+      "https://careerpilot-nc5e.onrender.com/api/mock-interview",
       {
         method: "POST",
         headers: {
@@ -501,7 +501,7 @@ const submitMockAnswer = async () => {
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:5000/api/mock-interview",
+      "https://careerpilot-nc5e.onrender.com/api/mock-interview",
       {
         method: "POST",
         headers: {
