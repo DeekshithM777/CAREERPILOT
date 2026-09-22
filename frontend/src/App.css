@@ -1,0 +1,556 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f7f7fb;
+  background: #08080d;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #02040a;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+.navbar {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.brand b {
+  color: #a78bfa;
+}
+
+.brand-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #8b5cf6, #4f46e5);
+  box-shadow: 0 0 30px rgba(124, 92, 255, 0.35);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #a7a7b2;
+  font-size: 14px;
+}
+
+.nav-button {
+  border: 1px solid rgba(255,255,255,0.12);
+  color: white;
+  background: rgba(255,255,255,0.06);
+  padding: 10px 18px;
+  border-radius: 10px;
+}
+
+.hero {
+  width: min(1000px, calc(100% - 40px));
+  margin: 70px auto 0;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid rgba(167,139,250,0.25);
+  border-radius: 999px;
+  background: rgba(139,92,246,0.08);
+  color: #c4b5fd;
+  font-size: 13px;
+}
+
+.hero h1 {
+  margin: 28px 0 20px;
+  font-size: clamp(52px, 8vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -5px;
+  font-weight: 750;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #ffffff, #a78bfa, #67e8f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-text {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #9b9ba8;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.primary-button {
+  border: 0;
+  color: white;
+  background: linear-gradient(135deg, #8b5cf6, #6366f1);
+  box-shadow: 0 12px 35px rgba(99,102,241,0.28);
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(99,102,241,0.4);
+}
+
+.secondary-button {
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #dddde5;
+  background: rgba(255,255,255,0.05);
+}
+
+.secondary-button:hover {
+  background: rgba(255,255,255,0.09);
+}
+
+.trust-row {
+  margin: 55px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+.trust-row div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.trust-row strong {
+  font-size: 14px;
+}
+
+.trust-row span {
+  color: #777783;
+  font-size: 12px;
+}
+
+.preview-card {
+  width: min(950px, calc(100% - 40px));
+  margin: 70px auto 80px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 22px;
+  background: rgba(18,18,27,0.72);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 100px rgba(0,0,0,0.35);
+}
+
+.preview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.small-label {
+  color: #8b5cf6;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.preview-top h2 {
+  margin: 7px 0 0;
+  font-size: 23px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 12px #34d399;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.preview-item {
+  min-height: 120px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 15px;
+  background: rgba(255,255,255,0.035);
+  transition: 0.25s ease;
+}
+
+.preview-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167,139,250,0.3);
+  background: rgba(139,92,246,0.07);
+}
+
+.preview-item > span {
+  font-size: 22px;
+}
+
+.preview-item div {
+  margin-top: 17px;
+}
+
+.preview-item strong {
+  display: block;
+  font-size: 14px;
+}
+
+.preview-item small {
+  display: block;
+  margin-top: 6px;
+  color: #777783;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+@media (max-width: 750px) {
+  .nav-links span {
+    display: none;
+  }
+
+  .hero {
+    margin-top: 45px;
+  }
+
+  .hero h1 {
+    letter-spacing: -3px;
+  }
+
+  .hero-text {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .trust-row {
+    gap: 25px;
+  }
+
+  .preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: calc(100% - 28px);
+  }
+
+  .hero,
+  .preview-card {
+    width: calc(100% - 28px);
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .trust-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* AI Job & Interview Assistant */
+
+.assistant-core {
+  width: min(1100px, 92%);
+  margin: 80px auto;
+  padding: 55px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+}
+
+.core-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.core-header .small-label {
+  color: #b99cff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.core-header h2 {
+  margin: 12px 0;
+  font-size: 38px;
+  color: white;
+}
+
+.core-header p {
+  color: #a9a9b5;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.assistant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.assistant-card {
+  padding: 30px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.assistant-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(185, 156, 255, 0.55);
+}
+
+.card-icon {
+  font-size: 32px;
+}
+
+.assistant-card h3 {
+  color: white;
+  margin: 18px 0 10px;
+  font-size: 21px;
+}
+
+.assistant-card p {
+  color: #aaaab5;
+  line-height: 1.6;
+  min-height: 75px;
+}
+
+.assistant-card button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 13px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: #9b7cff;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.assistant-card button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 800px) {
+  .assistant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .assistant-core {
+    padding: 30px 20px;
+  }
+
+  .core-header h2 {
+    font-size: 30px;
+  }
+}
+
+.upload-button {
+  display: inline-block;
+  width: 100%;
+  padding: 13px 18px;
+  margin-top: 15px;
+  border-radius: 12px;
+  background: #9b7cff;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+}
+
+.upload-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* ===== CAREERPILOT NEW PNG BACKGROUND ===== */
+
+#root > div {
+  min-height: 100vh !important;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("/careerpilot-background.png") center center / cover fixed no-repeat !important;
+}
+
+/* Make the old inline backgrounds transparent */
+#root > div > header,
+#root > div > main,
+#root > div > main > section,
+#root > div > main > div {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Keep the PNG behind everything */
+#root > div {
+  position: relative !important;
+}
+
+#root > div > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== BUTTON ANIMATION — TRANSITION ONLY ===== */
+
+button {
+  transition:
+    transform 0.25s cubic-bezier(.16,1,.3,1),
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+/* Home page background */
+.app {
+  background: url("./assets/pg.png") center center / cover fixed no-repeat !important;
+}
+
+/* FORCE NEW PG BACKGROUND ON HOME HERO */
+.hero {
+  background: transparent !important;
+}
+
+.featuresSection {
+  background: transparent !important;
+}
+
+.app {
+  background: url("./assets/pg.png") center center / cover fixed no-repeat !important;
+}
+
+
+
+/* =====================================================
+   HOME PAGE — MOUSE HOVER
+   CSS ONLY
+   ===================================================== */
+
+/* Top navigation buttons */
+header.nav button {
+  transition: transform 0.25s ease, filter 0.25s ease !important;
+}
+
+header.nav button:hover {
+  transform: translateY(-5px) !important;
+  filter: brightness(1.12) !important;
+}
+
+/* Hero buttons */
+.heroButtons > button {
+  transition: transform 0.25s ease, filter 0.25s ease !important;
+}
+
+.heroButtons > button:hover {
+  transform: translateY(-6px) !important;
+  filter: brightness(1.12) !important;
+}
+
+/* Four feature cards */
+#features .featureGrid > div {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease !important;
+}
+
+#features .featureGrid > div:hover {
+  transform: translateY(-9px) scale(1.02) !important;
+  box-shadow:
+    0 18px 40px rgba(40, 180, 255, 0.25) !important;
+  border-color: rgba(80, 200, 255, 0.55) !important;
+}
+
+/* Bottom Get Started */
+#features > button {
+  transition: transform 0.25s ease, filter 0.25s ease !important;
+}
+
+#features > button:hover {
+  transform: translateY(-6px) !important;
+  filter: brightness(1.12) !important;
+}
+
+/* Button press */
+header.nav button:active,
+.heroButtons > button:active,
+#features > button:active {
+  transform: scale(0.97) !important;
+}
